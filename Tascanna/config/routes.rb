@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
     root 'pages#home' # Sets the root as the pages controller and execute the home action
 
     get 'about' => 'pages#about' # Go to the pages controller and execute the about action

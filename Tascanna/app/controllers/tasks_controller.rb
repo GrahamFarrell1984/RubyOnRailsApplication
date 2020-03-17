@@ -3,7 +3,9 @@ class TasksController < ApplicationController
     before_action :set_task, only:[:edit, :update, :show, :destroy] # Before doing anything set the task for the edit, update, show, and destroy methods
 
     def index
-        @tasks = current_user.tasks # Get all tasks for a specific user
+        @to_do = current_user.tasks.where(state: 'to_do') # Get all tasks for a specific user where the state is equal to to do
+        @doing = current_user.tasks.where(state: 'doing') # Get all tasks for a specific user where the state is equal to doing
+        @done = current_user.tasks.where(state: 'done') # Get all tasks for a specific user where the state is equal to done
     end
 
     def new
@@ -48,7 +50,7 @@ class TasksController < ApplicationController
     end
 
     def tasks_params
-        params.require(:task).permit(:content)
+        params.require(:task).permit(:content, :state)
     end
 
 end

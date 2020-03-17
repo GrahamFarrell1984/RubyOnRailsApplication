@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
     before_action :authenticate_user!
-    before_action :set_task, only:[:edit, :update, :show, :destroy] # Before doing anything set the task for the edit, update, show, and destroy methods
+    before_action :set_task, only:[:edit, :update, :show, :destroy, :change] # Before doing anything set the task for the edit, update, show, destroy, and change methods
 
     def index
         @to_do = current_user.tasks.where(state: 'to_do') # Get all tasks for a specific user where the state is equal to to do
@@ -37,6 +37,12 @@ class TasksController < ApplicationController
     def destroy
         @task.destroy
         flash[:notice] = "Task was successfully deleted"
+        redirect_to tasks_path
+    end
+
+    def change
+        @task.update_attributes(state: params[:state])
+        flash[:notice] = "Task state was successfully changed"
         redirect_to tasks_path
     end
 

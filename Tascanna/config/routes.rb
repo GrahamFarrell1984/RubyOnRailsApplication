@@ -2,7 +2,11 @@ Rails.application.routes.draw do
 
     devise_for :users
 
-    resources :tasks
+    resources :tasks do
+        member do
+            put :change
+        end
+    end
 
     root 'pages#home' # Sets the root as the pages controller and execute the home action
 

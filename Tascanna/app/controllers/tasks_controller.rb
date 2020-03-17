@@ -1,8 +1,9 @@
 class TasksController < ApplicationController
+    before_action :authenticate_user!
     before_action :set_task, only:[:edit, :update, :show, :destroy] # Before doing anything set the task for the edit, update, show, and destroy methods
 
     def index
-        @tasks = Task.all
+        @tasks = current_user.tasks # Get all tasks for a specific user
     end
 
     def new
@@ -10,7 +11,7 @@ class TasksController < ApplicationController
     end
 
     def create
-        @task = Task.new(tasks_params)
+        @task = current_user.tasks.new(tasks_params) # Create a task associated with the current user that is logged in
         if @task.save
             flash[:notice] = "Task was successfully created"
             redirect_to task_path(@task)

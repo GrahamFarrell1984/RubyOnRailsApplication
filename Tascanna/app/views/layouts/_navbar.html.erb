@@ -1,32 +1,18 @@
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle Navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
             <%= link_to '<i class="fa fa-list-ul"></i> Tascanna'.html_safe, root_path, class: 'navbar-brand' %>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <% if current_user %>
-                    <li><%= link_to 'Account Settings', edit_user_registration_path %></li>
+                    <li><%= link_to current_user.email + ' Account Settings', edit_user_registration_path %></li>
                     <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
                 <% else %>
                     <li><%= link_to 'About', about_path %></li>
                     <li><%= link_to 'Log In', new_user_session_path %></li>
                 <% end %>
-                <li class="dropdown"></li>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another Action</a></li>
-                    <li><a href="#">Something Else Here</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li><a href="#">Separated Link</a></li>
-                </ul>
             </ul>
         </div>
     </div>

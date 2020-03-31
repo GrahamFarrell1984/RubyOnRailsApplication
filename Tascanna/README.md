@@ -14,16 +14,14 @@
 * Minitest Reporters gem - https://github.com/kern/minitest-reporters
 * SimpleCov gem - https://github.com/colszowka/simplecov
 
-* Configuration
+## Configuration
 
-* Database creation
+## Database creation
 
-* Database initialization
+## Database initialization
 
-* How to run the test suite
+## How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
-
-* ...
+## Deployment instructions

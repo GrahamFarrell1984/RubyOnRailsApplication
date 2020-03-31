@@ -25,13 +25,13 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
-# Use Bootstrap gem
+# Use Twitter Bootstrap gem
 gem 'twitter-bootstrap-rails'
 
 # Use Font Awesome gem
 gem 'font-awesome-rails'
 
-# Use Simple Form
+# Use Simple Form gem
 gem 'simple_form'
 
 # Use Devise gem

@@ -184,4 +184,40 @@ class TasksTest < ApplicationSystemTestCase
 
     end
 
+    test "A user should be able to change the state of an existing task from To Do, to Doing, to Done, back to do Doing, and then back to Done" do
+
+        user = User.create(:email => 'userOne@testEmail.com', :password => 'Pa$$w0rd')
+
+        login_as(user, :scope => :user)
+
+        visit "/tasks"
+
+        click_on "New Task"
+
+        fill_in "task_content", with: "This is my fourth task."
+
+        click_on "Create Task"
+
+        assert_text "Task was successfully created"
+
+        click_on "All Tasks"
+
+        find('#todo-right-arrow').click
+
+        assert_text "Task state was successfully changed to Doing"
+
+        find('#doing-right-arrow').click
+
+        assert_text "Task state was successfully changed to Done"
+
+        find('#done-left-arrow').click
+
+        assert_text "Task state was successfully changed to Doing"
+
+        find('#doing-left-arrow').click
+
+        assert_text "Task state was successfully changed to To Do"
+
+    end
+
 end

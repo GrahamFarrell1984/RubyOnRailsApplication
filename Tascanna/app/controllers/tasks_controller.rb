@@ -41,8 +41,14 @@ class TasksController < ApplicationController
     end
 
     def change
-        @task.update_attributes(state: params[:state])
-        flash[:notice] = "Task state was successfully changed"
+        @task.update(state: params[:state])
+        if @task.state == 'doing'
+            flash[:notice] = "Task state was successfully changed to Doing"
+        elsif @task.state == 'done'
+            flash[:notice] = "Task state was successfully changed to Done"
+        else
+            flash[:notice] = "Task state was successfully changed to To Do"
+        end
         redirect_to tasks_path
     end
 

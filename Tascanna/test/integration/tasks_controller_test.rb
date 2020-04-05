@@ -37,7 +37,7 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
     end
 
     # The following tests are for the new tasks page of the application
-    test "The user can navigate to the new task page" do
+    test "The user can navigate to the new task page when they are logged in" do
         user = User.new(email: "userOne@testEmail.com", password: "Pa$$w0rd")
         sign_in user
         get '/tasks/new'

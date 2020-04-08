@@ -38,6 +38,12 @@ gem 'devise'
 # Use SimpleCov gem
 gem 'simplecov', require: false, group: :test
 
+# Use Greeting Generator gem
+gem 'greeting_generator', git: 'https://github.com/GrahamFarrell1984/greeting_generator.git'
+
+# Use Bradley View Tool gem
+gem 'bradley_view_tool', git: 'https://github.com/PatBradley88/bradley_view_tool.git'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 

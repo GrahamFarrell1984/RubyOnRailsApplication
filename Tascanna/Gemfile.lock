@@ -1,3 +1,15 @@
+GIT
+  remote: https://github.com/GrahamFarrell1984/greeting_generator.git
+  revision: d7e5023bcd252a706277ce182217c74e132a033e
+  specs:
+    greeting_generator (0.1.0)
+
+GIT
+  remote: https://github.com/PatBradley88/bradley_view_tool.git
+  revision: 2e216517f57c7332f755bacab42ee7e0a500abb2
+  specs:
+    bradley_view_tool (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -250,10 +262,12 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap (>= 1.4.2)
+  bradley_view_tool!
   byebug
   capybara (>= 2.15)
   devise
   font-awesome-rails
+  greeting_generator!
   jbuilder (~> 2.7)
   listen (>= 3.0.5, < 3.2)
   minitest-reporters

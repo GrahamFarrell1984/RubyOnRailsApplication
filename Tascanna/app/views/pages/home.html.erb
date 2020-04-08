@@ -1,5 +1,8 @@
 <div class="jumbotron">
+    <%= GreetingGenerator::Generator.generateGreeting %>
     <h1><i class="fa fa-list-ul"></i> Welcome To Tascanna</h1>
     <p>Helping you increase your productivity!</p>
     <%= link_to 'Sign Up!', new_user_registration_path, class: 'btn btn-primary btn-lg' %>
+    <br><br>
+    <footer><%= BradleyViewTool::Renderer.copyright 'Graham Farrell', 'All rights reserved' %></footer>
 </div>

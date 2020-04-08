@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/GrahamFarrell1984/greeting_generator.git
-  revision: d7e5023bcd252a706277ce182217c74e132a033e
+  revision: 1bd1477b295eeed057366fbb83964453b4c36ec4
   specs:
     greeting_generator (0.1.0)
 

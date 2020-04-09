@@ -2,7 +2,7 @@ require 'test_helper'
 
 class PagesControllerTest < ActionDispatch::IntegrationTest
 
-    # The following six tests are for the welcome page of the application
+    # The following seven tests are for the welcome page of the application
     test "Any user can navigate to the welcome page" do
         get '/'
         assert_response :success
@@ -31,6 +31,11 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
     test "The a element on the welcome page has the text 'Sign Up!'" do
         get '/'
         assert_select "a", "Sign Up!"
+    end
+
+    test "The footer element on the welcome page has the text '© 2020 | Graham Farrell All rights reserved'" do
+        get '/'
+        assert_select "footer", "© 2020 | Graham Farrell All rights reserved"
     end
 
     # The following three tests are for the about page of the application

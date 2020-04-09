@@ -3,7 +3,7 @@ require 'test_helper'
 class PagesControllerTest < ActionDispatch::IntegrationTest
 
     # The following six tests are for the welcome page of the application
-    test "User can navigate to the welcome page" do
+    test "Any user can navigate to the welcome page" do
         get '/'
         assert_response :success
     end
@@ -34,7 +34,7 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
     end
 
     # The following three tests are for the about page of the application
-    test "User can navigate to the about page" do
+    test "Any user can navigate to the about page" do
         get '/about'
         assert_response :success
     end
@@ -50,7 +50,7 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
     end
 
     # The following two tests are for the sign up page of the application
-    test "User can navigate to the sign up page" do
+    test "Any user can navigate to the sign up page" do
         get '/users/sign_up'
         assert_response :success
     end
@@ -61,7 +61,7 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
     end
 
     # The following two tests are for the sign in page of the application
-    test "User can navigate to the sign in page" do
+    test "Any user can navigate to the sign in page" do
         get '/users/sign_in'
         assert_response :success
     end

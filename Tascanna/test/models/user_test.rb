@@ -17,6 +17,11 @@ class UserTest < ActiveSupport::TestCase
         assert(!user.valid?, "Password is valid") # Asserts that user object password was not valid, otherwise print "Password is valid" in the terminal
     end
 
+    test "The password does not contain a lowercase letter so is not valid" do
+        user = User.new(email: "userOne@testEmail.com", password: "PA$$W0RD") # Creates a new User object with password that is not valid as it is does not contain an lowercase letter and stores it in a variable called user
+        assert(!user.valid?, "Password is valid") # Asserts that user object password was not valid, otherwise print "Password is valid" in the terminal
+    end
+
     test "The password does not contain a number so is not valid" do
         user = User.new(email: "userOne@testEmail.com", password: "Pa$$word") # Creates a new User object with password that is not valid as it is does not contain a number and stores it in a variable called user
         assert(!user.valid?, "Password is valid") # Asserts that user object password was not valid, otherwise print "Password is valid" in the terminal

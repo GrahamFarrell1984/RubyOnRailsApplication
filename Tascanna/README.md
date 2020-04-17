@@ -13,15 +13,5 @@
 * Devise gem - https://github.com/heartcombo/devise
 * Minitest Reporters gem - https://github.com/kern/minitest-reporters
 * SimpleCov gem - https://github.com/colszowka/simplecov
-
-## Configuration
-
-## Database creation
-
-## Database initialization
-
-## How to run the test suite
-
-## Services (job queues, cache servers, search engines, etc.)
-
-## Deployment instructions
+* Greeting Generator gem - https://github.com/GrahamFarrell1984/greeting_generator
+* Bradley View Tool - https://github.com/PatBradley88/bradley_view_tool
